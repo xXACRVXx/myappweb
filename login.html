@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    
+    <title>Inicio de sesión</title>
+  </head>
+  <body>
+    
+    {% with mensages = get_flashed_messages() %}
+    {% if mensages %}
+    {% for mensage in mensages %}
+       <p>{{mensage}}<a href="{{ url_for('logout')}}"> Cerrar sesión</a></p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <h1> Inicio de sesión </h1>
+    <form action="app" method="POST">
+       <div><label><p>Usuario</p><input type="text" name="user"></label></div>
+       
+         
+       <div><label><p>Contraseña</p><input type="password" name="contraseña"></label></div>
+       <input type="submit" value="INICIAR SESIÓN">
+     </form>  
+     
+    <h3>
+    <a href="{{ url_for('regist')}}">registro</a>
+    <a href="{{ url_for('about')}}">About</a>
+    </h3>
+    <table border="0">
+      <thead>
+        <tr>
+          <td>Usuario</td>
+          <td>contraseña</td>
+          <td>operations</td>
+        </tr>
+      </thead>
+      <tbody>
+        {%for usuario in usuarios %}
+        <tr>
+          <td>{{ usuario.0 }}</td>
+          <td>{{ usuario.1 }}</td>
+          <td>
+            <a href="/edit">Editar</a>
+            <a href="/delit">Eliminar</a>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  
+  </body>
+</html>

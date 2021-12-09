@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+   <body>
+    <h1> Estos son los usuarios registrados </h1>
+      <table border = 1>
+         <thead>
+            <td>Usuarios</td>
+            <td>id</td>
+
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["usuarios"]}}</td>
+               <td> {{ row["id"]}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      
+      <a href = "/">Go back to home page</a>
+      
+   </body>
+</html>
