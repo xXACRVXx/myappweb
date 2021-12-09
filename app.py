@@ -1,13 +1,38 @@
 from flask import Flask, request, render_template, redirect, url_for, jsonify, Response, flash, session
 import sqlite3
 
+def index1():
+  """
+  
+  <!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>index</title>
+  </head>
+  <body>
+    <h1>Hola bienvenido</h1>
+    <h1>A MI SERVIDOR</h1>
+    <h1>POR FAVOR ENTRA EN ALGUNA DE ESTAS PÁGINAS</h1>
+      <a class="navbar-brand" href="{{ url_for('login')}}">login</a>
+  
+      <a class="navbar-brand" href="{{ url_for('regist')}}">regist</a>
+  
+      <a class="navbar-brand" href="{{ url_for('about')}}">about</a> 
+  </body>
+</html>
+  
+  
+  """
 
 app = Flask(__name__)
 app.secret_key = 'myfukinsecretkey'
 @app.route('/')
 def index():
   #return render_template('index.html')
-  return '<h1> hola </h1>'
+  return index1()
 
 @app.route('/pru', methods=['POST', 'GET'])
 def pru():
