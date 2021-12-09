@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title> blog  </title>
+  </head>
+  <body>
+     <h1>
+    {% with mensages = get_flashed_messages() %}
+    {% if mensages %}
+    {% for mensage in mensages %}
+       <p>{{mensage}}<a href="{{ url_for('logout')}}"> Cerrar sesión</a></p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+       
+    <p>El login si funciona :D</p>
+        
+       
+       
+    <table border="0">
+      <thead>
+        <tr>
+          <td>Usuario</td>
+          <td>contraseña</td>
+          <td>operations</td>
+        </tr>
+      </thead>
+      <tbody>
+        {%for usuario in usuarios %}
+        <tr>
+          <td>{{ usuario.0 }}</td>
+          <td>{{ usuario.1 }}</td>
+          <td>
+            <a href="/edit">Editar</a>
+            <a href="/delit">Eliminar</a>
+          </td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+     
+       
+       
+      </h1>
+  </body>
+</html>
