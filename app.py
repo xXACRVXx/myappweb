@@ -199,4 +199,4 @@ def not_found(error=None):
     
 if __name__ == '__main__':
     # run app in debug mode on port 5000
-    app.run(threaded=True, debug=True,port=5000)
+    app.run(threaded=True,port=5000)
