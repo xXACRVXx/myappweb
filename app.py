@@ -6,7 +6,8 @@ app = Flask(__name__)
 app.secret_key = 'myfukinsecretkey'
 @app.route('/')
 def index():
-  return render_template('index.html')
+  #return render_template('index.html')
+  return '<h1> hola </h1>'
 
 @app.route('/pru', methods=['POST', 'GET'])
 def pru():
