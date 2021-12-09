@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, redirect, url_for, jsonify, R
 import sqlite3
 
 def index1():
-  """
+    return  """
   
   <!DOCTYPE html>
 <html lang="es">
