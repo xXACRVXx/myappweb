@@ -4,7 +4,7 @@ import sqlite3
 
 
 app = Flask(__name__, template_folder=".")
-app.secret_key = 'myfukinsecretkey'
+app.secret_key = 'mysecretkey'
 @app.route('/')
 def index():
   return render_template('index.html')
